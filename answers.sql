@@ -8,10 +8,10 @@ SQL
 -- answer: Fareed Zakaria, 19 times
 
 question_two = <<-SQL
-SELECT occupation, COUNT(occupation)
+SELECT year, occupation, COUNT(occupation)
 FROM dailyshow
-GROUP BY year
-ORDER BY year ASC;
+GROUP BY year, occupation
+ORDER BY COUNT(occupation) ASC;
 SQL
 
 question_three = <<-SQL
@@ -69,8 +69,8 @@ SQL
 -- answer: 2000, 169 guests
 
 question_seven = <<-SQL
-  SELECT showg, COUNT(showg)
+  SELECT year, showg, COUNT(showg)
   FROM dailyshow
-  GROUP BY year
-  ORDER BY COUNT(showg) ASC;
+  GROUP BY year, showg
+  ORDER BY COUNT(showg) ASC, year ASC
 SQL

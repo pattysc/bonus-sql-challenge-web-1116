@@ -31,8 +31,8 @@ SQL
 question_two = <<-SQL
 SELECT year, occupation, COUNT(occupation)
 FROM dailyshow
-GROUP BY year
-ORDER BY COUNT(occupation) ASC
+GROUP BY year, occupation
+ORDER BY COUNT(occupation) ASC;
 SQL
 
 question_three = <<-SQL
@@ -62,10 +62,10 @@ question_six = <<-SQL
 SQL
 
 question_seven = <<-SQL
-  SELECT showg, COUNT(showg)
+  SELECT year, showg, COUNT(showg)
   FROM dailyshow
-  GROUP BY year
-  ORDER BY COUNT(showg) ASC;
+  GROUP BY year, showg
+  ORDER BY COUNT(showg) ASC, year ASC
 SQL
 
 
