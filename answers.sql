@@ -5,7 +5,7 @@ question_one = <<-SQL
   GROUP BY guestlist
   ORDER BY COUNT(guestlist) ASC;
 SQL
-answer: Fareed Zakaria, 19 times
+-- answer: Fareed Zakaria, 19 times
 
 question_two = <<-SQL
 SELECT occupation, COUNT(occupation)
@@ -21,15 +21,32 @@ GROUP BY occupation
 ORDER BY COUNT(occupation) ASC;
 SQL
 
-answer: actor, 596 times
+-- answer: actor, 596 times
 
 question_four = <<-SQL
-SELECT COUNT(guestlist)
+SELECT DISTINCT guestlist
 FROM dailyshow
-WHERE guestlist LIKE "Bill%";
+WHERE guestlist LIKE "Bill %";
 SQL
 
-answer: 56
+-- answer: 17 people named Bill
+-- Bill Maher
+-- Bill Goldberg
+-- Bill O'Reilly
+-- Bill Hemmer
+-- Bill Clinton
+-- Bill Moyers
+-- Bill Kristol
+-- Bill Gates
+-- Bill Bradley
+-- Bill Bishop
+-- Bill Russell
+-- Bill Cosby
+-- Bill O' Reilly
+-- Bill Dedman
+-- Bill de Blasio
+-- Bill Hader
+-- Bill Browder
 
 question_five = <<-SQL
   SELECT showdate
@@ -37,10 +54,10 @@ question_five = <<-SQL
   WHERE guestlist = "Patrick Stewart"
 SQL
 
-answer:
-4/12/00
-4/21/03
-11/7/13
+-- answer:
+-- 4/12/00
+-- 4/21/03
+-- 11/7/13
 
 question_six = <<-SQL
   SELECT year, COUNT(guestlist)
@@ -49,7 +66,7 @@ question_six = <<-SQL
   ORDER BY COUNT(guestlist) ASC;
 SQL
 
-answer: 2000, 169 guestlist
+-- answer: 2000, 169 guests
 
 question_seven = <<-SQL
   SELECT showg, COUNT(showg)

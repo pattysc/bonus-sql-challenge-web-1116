@@ -29,10 +29,10 @@ question_one = <<-SQL
 SQL
 
 question_two = <<-SQL
-SELECT occupation, COUNT(occupation)
+SELECT year, occupation, COUNT(occupation)
 FROM dailyshow
-GROUP BY year
-ORDER BY year ASC;
+GROUP BY occupation
+ORDER BY COUNT(occupation) ASC
 SQL
 
 question_three = <<-SQL
@@ -43,9 +43,9 @@ ORDER BY COUNT(occupation) ASC;
 SQL
 
 question_four = <<-SQL
-SELECT COUNT(guestlist)
+SELECT DISTINCT guestlist
 FROM dailyshow
-WHERE guestlist LIKE "Bill%";
+WHERE guestlist LIKE "Bill %";
 SQL
 
 question_five = <<-SQL
@@ -69,5 +69,5 @@ question_seven = <<-SQL
 SQL
 
 
-lol = db.execute(question_seven)
+lol = db.execute(question_six)
 puts lol
