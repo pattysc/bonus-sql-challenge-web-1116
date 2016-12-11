@@ -31,7 +31,7 @@ SQL
 question_two = <<-SQL
 SELECT year, occupation, COUNT(occupation)
 FROM dailyshow
-GROUP BY occupation
+GROUP BY year
 ORDER BY COUNT(occupation) ASC
 SQL
 
@@ -69,5 +69,5 @@ question_seven = <<-SQL
 SQL
 
 
-lol = db.execute(question_six)
+lol = db.execute(question_two)
 puts lol
